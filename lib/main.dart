@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Tinder cards demo',
+      title: 'Activity Decider',
       theme: ThemeData(primarySwatch: Colors.blue),
       home: SwipeFeedPage(),
     );

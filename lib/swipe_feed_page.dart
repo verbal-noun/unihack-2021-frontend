@@ -1,3 +1,4 @@
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'cards_section_alignment.dart';
 import 'cards_section_draggable.dart';
@@ -9,6 +10,7 @@ class SwipeFeedPage extends StatefulWidget {
 
 class _SwipeFeedPageState extends State<SwipeFeedPage> {
   bool showAlignmentCards = false;
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +38,24 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
           showAlignmentCards
               ? CardsSectionAlignment(context)
               : CardsSectionDraggable(),
-          buttonsRow()
+          /*buttonsRow()*/
         ],
       ),
+        bottomNavigationBar: FancyBottomNavigation(
+          tabs: [
+            TabData(iconData: Icons.home, title: "Home"),
+            TabData(iconData: Icons.search, title: "Search"),
+          ],
+          onTabChangedListener: (position) {
+            setState(() {
+              currentPage = position;
+            });
+          },
+        ),
     );
   }
 
-  Widget buttonsRow() {
+  /*Widget buttonsRow() {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 48.0),
       child: Row(
@@ -85,5 +98,5 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
         ],
       ),
     );
-  }
+  }*/
 }
