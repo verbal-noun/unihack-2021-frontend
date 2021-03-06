@@ -1,3 +1,4 @@
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'cards_section_alignment.dart';
 
@@ -8,6 +9,7 @@ class SwipeFeedPage extends StatefulWidget {
 
 class _SwipeFeedPageState extends State<SwipeFeedPage> {
   bool showAlignmentCards = false;
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,50 +30,16 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
       body: Column(
         children: <Widget>[CardsSection(context), buttonsRow()],
       ),
-    );
-  }
-
-  Widget buttonsRow() {
-    return Container(
-      margin: EdgeInsets.symmetric(vertical: 48.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: <Widget>[
-          FloatingActionButton(
-            mini: true,
-            onPressed: () {
-              print("Button 1");
-            },
-            backgroundColor: Colors.white,
-            child: Icon(Icons.loop, color: Colors.yellow),
-          ),
-          Padding(padding: EdgeInsets.only(right: 8.0)),
-          FloatingActionButton(
-            onPressed: () {
-              print("Button 2");
-            },
-            backgroundColor: Colors.white,
-            child: Icon(Icons.close, color: Colors.red),
-          ),
-          Padding(padding: EdgeInsets.only(right: 8.0)),
-          FloatingActionButton(
-            onPressed: () {
-              print("Button 3");
-            },
-            backgroundColor: Colors.white,
-            child: Icon(Icons.favorite, color: Colors.green),
-          ),
-          Padding(padding: EdgeInsets.only(right: 8.0)),
-          FloatingActionButton(
-            mini: true,
-            onPressed: () {
-              print("Button 4");
-            },
-            backgroundColor: Colors.white,
-            child: Icon(Icons.star, color: Colors.blue),
-          ),
+      bottomNavigationBar: FancyBottomNavigation(
+        tabs: [
+          TabData(iconData: Icons.home, title: "Home", onclick: () {}),
+          TabData(iconData: Icons.search, title: "Search"),
         ],
+        onTabChangedListener: (position) {
+          setState(() {
+            currentPage = position;
+          });
+        },
       ),
     );
   }
