@@ -12,7 +12,6 @@ class _CategoriesPageState extends State<CategoriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Categories page"),
-        back
       ),
       body: Center(child: Text("Browse activities by categories"),),
     );
