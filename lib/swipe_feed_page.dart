@@ -2,7 +2,6 @@ import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:tinder_cards/categories.dart';
 import 'cards_section_alignment.dart';
-import 'cards_section_draggable.dart';
 
 class SwipeFeedPage extends StatefulWidget {
   @override
@@ -24,11 +23,6 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
         backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {}, icon: Icon(Icons.settings, color: Colors.grey)),
-        title: Switch(
-          onChanged: (bool value) => setState(() => showAlignmentCards = value),
-          value: showAlignmentCards,
-          activeColor: Colors.red,
-        ),
         actions: <Widget>[
           IconButton(
               onPressed: () {},
@@ -70,23 +64,13 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
     switch (page) {
       case 0:
         return Column(
-          children: <Widget>[
-            showAlignmentCards
-                ? CardsSectionAlignment(context)
-                : CardsSectionDraggable(),
-            /*buttonsRow()*/
-          ],
+          children: <Widget>[CardsSection(context)],
         );
       case 1: return CategoriesPage();
       default:
         return Column(
-          children: <Widget>[
-            showAlignmentCards
-                ? CardsSectionAlignment(context)
-                : CardsSectionDraggable(),
-            /*buttonsRow()*/
-          ],
-        );
+    children: <Widget>[CardsSection(context)],
+      );
     }
   }
 

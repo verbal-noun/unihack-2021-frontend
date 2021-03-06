@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
-class ProfileCardAlignment extends StatelessWidget {
+class ProfileCard extends StatefulWidget {
   final int cardNum;
-  ProfileCardAlignment(this.cardNum);
+  final String cardLabel;
+  final String photoURL;
+  ProfileCard({this.cardNum, this.cardLabel, this.photoURL});
 
+  @override
+  _ProfileCardState createState() => _ProfileCardState();
+}
+
+class _ProfileCardState extends State<ProfileCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -12,7 +19,7 @@ class ProfileCardAlignment extends StatelessWidget {
           SizedBox.expand(
             child: Material(
               borderRadius: BorderRadius.circular(12.0),
-              child: Image.asset('res/portrait.jpeg', fit: BoxFit.cover),
+              child: Image.asset(widget.photoURL, fit: BoxFit.cover),
             ),
           ),
           SizedBox.expand(
@@ -32,13 +39,13 @@ class ProfileCardAlignment extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Card number $cardNum',
+                    Text('Card number ${widget.cardNum}',
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
                             fontWeight: FontWeight.w700)),
                     Padding(padding: EdgeInsets.only(bottom: 8.0)),
-                    Text('A short description.',
+                    Text(widget.cardLabel,
                         textAlign: TextAlign.start,
                         style: TextStyle(color: Colors.white)),
                   ],
