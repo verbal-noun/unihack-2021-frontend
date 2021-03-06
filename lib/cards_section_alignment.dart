@@ -36,6 +36,8 @@ class _CardsSectionState extends State<CardsSection>
 
   List<ProfileCard> cards = [];
   List<ProfileBackCard> backCards = [];
+  GlobalKey<FlipCardState> cardKey = GlobalKey<FlipCardState>();
+
   ProfileCard lastCard;
   ProfileBackCard backLastCard;
 
@@ -73,6 +75,10 @@ class _CardsSectionState extends State<CardsSection>
     _controller.addStatusListener((AnimationStatus status) {
       if (status == AnimationStatus.completed) {
         changeCardsOrder();
+        if (!cardKey.currentState.isFront) {
+          cardKey.currentState.controller.reset();
+          cardKey.currentState.isFront = true;
+        }
         if (dir == 1) {
           print("Found a match! ${lastCard.cardNum}");
           Navigator.of(context).push(new PageRouteBuilder(
@@ -88,9 +94,9 @@ class _CardsSectionState extends State<CardsSection>
     return Expanded(
         child: Stack(
       children: <Widget>[
-        FlipCard(front: backCard(), back: backsideBackCard()),
-        FlipCard(front: middleCard(), back: backsideMiddleCard()),
-        FlipCard(front: frontCard(), back: backsideFrontCard()),
+        backCard(),
+        middleCard(),
+        FlipCard(key: cardKey, front: frontCard(), back: backsideFrontCard()),
 
         // Prevent swiping if the cards are animating
         _controller.status != AnimationStatus.forward
