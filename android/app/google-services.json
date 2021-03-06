@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1061949486652",
+    "project_id": "unihack-team-v",
+    "storage_bucket": "unihack-team-v.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1061949486652:android:5d316c70cf294d54df3539",
+        "android_client_info": {
+          "package_name": "com.teamv.activitydecider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1061949486652-o8i2r24jh7hcog1d5pfoh2aeev6msol7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu4i38DpZCPnlmy4sjrgzlDJm_vUdRpPQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1061949486652-o8i2r24jh7hcog1d5pfoh2aeev6msol7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.skuu.tindercards;
+package com.teamv.activitydecider;
 
 import android.os.Bundle;
 
