@@ -14,15 +14,14 @@ List<Alignment> cardsAlign = [
 List<Size> cardsSize = [];
 
 class CardsSection extends StatefulWidget {
-  String location;
-  CardsSection(BuildContext context, String loc) {
+  final String location;
+  CardsSection(BuildContext context, {this.location}) {
     cardsSize.add(Size(MediaQuery.of(context).size.width * 0.9,
         MediaQuery.of(context).size.height * 0.6));
     cardsSize.add(Size(MediaQuery.of(context).size.width * 0.85,
         MediaQuery.of(context).size.height * 0.55));
     cardsSize.add(Size(MediaQuery.of(context).size.width * 0.8,
         MediaQuery.of(context).size.height * 0.5));
-    location = loc;
   }
 
   @override
@@ -48,6 +47,7 @@ class _CardsSectionState extends State<CardsSection>
 
   @override
   void initState() {
+    print(widget.location);
     super.initState();
 
     // Read cards from backend

@@ -94,13 +94,13 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
     switch (page) {
       case 0:
         return Column(
-          children: <Widget>[CardsSection(context, location)],
+          children: <Widget>[CardsSection(context, location: location)],
         );
       case 1:
         return CategoriesPage();
       default:
         return Column(
-          children: <Widget>[CardsSection(context, location)],
+          children: <Widget>[CardsSection(context, location: location)],
         );
     }
   }
