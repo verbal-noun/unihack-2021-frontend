@@ -28,7 +28,7 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
       ),
       backgroundColor: Colors.white,
       body: Column(
-        children: <Widget>[CardsSection(context), buttonsRow()],
+        children: <Widget>[CardsSection(context)],
       ),
       bottomNavigationBar: FancyBottomNavigation(
         tabs: [
