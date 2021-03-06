@@ -1,15 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:feature" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8d869332-63f1-403f-86fc-f64482ce6695" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/profile_card_expand.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/backside_profile_card_alignment.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/cards_section_alignment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cards_section_alignment.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/cards_section_draggable.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/profile_card_alignment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/profile_card_alignment.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/profile_card_draggable.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/swipe_feed_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/swipe_feed_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,21 +49,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IgnoredFileRootStore">
-    <option name="generatedRoots">
-      <set>
-        <option value="C:\Users\kaifa\Desktop\unihack-2021-frontend\.idea" />
-      </set>
-    </option>
-  </component>
   <component name="ProjectId" id="1pMbWqtpxF94UIW8oau384jXeG1" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../FlutterCardSwipe/animation_exp" />
     <property name="settings.editor.selected.configurable" value="flutter.settings" />
@@ -59,30 +77,50 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="571" y="265" key="FileChooserDialogImpl" timestamp="1614998307431">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="571" y="265" key="FileChooserDialogImpl/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1614998307431" />
-    <state width="1522" height="252" key="GridCell.Tab.0.bottom" timestamp="1615008294093">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="113" key="GridCell.Tab.0.bottom" timestamp="1615018179038">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
+    <state width="1398" height="167" key="GridCell.Tab.0.bottom/0.25.1440.804@0.25.1440.804" timestamp="1615014263110" />
+    <state width="1398" height="113" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1615018179038" />
     <state width="1522" height="252" key="GridCell.Tab.0.bottom/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state width="1522" height="252" key="GridCell.Tab.0.center" timestamp="1615008294093">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="113" key="GridCell.Tab.0.center" timestamp="1615018179037">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
+    <state width="1398" height="167" key="GridCell.Tab.0.center/0.25.1440.804@0.25.1440.804" timestamp="1615014263108" />
+    <state width="1398" height="113" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1615018179037" />
     <state width="1522" height="252" key="GridCell.Tab.0.center/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state width="1522" height="252" key="GridCell.Tab.0.left" timestamp="1615008294093">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="113" key="GridCell.Tab.0.left" timestamp="1615018179036">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
+    <state width="1398" height="167" key="GridCell.Tab.0.left/0.25.1440.804@0.25.1440.804" timestamp="1615014263101" />
+    <state width="1398" height="113" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1615018179036" />
     <state width="1522" height="252" key="GridCell.Tab.0.left/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state width="1522" height="252" key="GridCell.Tab.0.right" timestamp="1615008294093">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="113" key="GridCell.Tab.0.right" timestamp="1615018179038">
+      <screen x="0" y="25" width="1440" height="805" />
     </state>
+    <state width="1398" height="167" key="GridCell.Tab.0.right/0.25.1440.804@0.25.1440.804" timestamp="1615014263109" />
+    <state width="1398" height="113" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1615018179038" />
     <state width="1522" height="252" key="GridCell.Tab.0.right/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state x="292" y="152" key="SettingsEditor" timestamp="1614996182071">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="0" y="28" width="1440" height="804" key="SettingsEditor" timestamp="1615014046987">
+      <screen x="0" y="0" width="1440" height="900" />
     </state>
+    <state x="0" y="28" width="1440" height="804" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1615014046987" />
     <state x="292" y="152" key="SettingsEditor/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1614996182071" />
     <state x="462" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1614995965939">
       <screen x="0" y="0" width="1920" height="1040" />

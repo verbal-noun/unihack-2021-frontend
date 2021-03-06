@@ -1,6 +1,8 @@
+import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:tinder_cards/profile_card_expand.dart';
 import 'profile_card_alignment.dart';
+import 'backside_profile_card_alignment.dart';
 import 'dart:math';
 
 List<Alignment> cardsAlign = [
@@ -27,10 +29,13 @@ class CardsSection extends StatefulWidget {
 class _CardsSectionState extends State<CardsSection>
     with SingleTickerProviderStateMixin {
   int cardsCounter = 0;
+  int backCardsCounter = 0;
   int dir = 0;
 
   List<ProfileCard> cards = [];
+  List<ProfileBackCard> backCards = [];
   ProfileCard lastCard;
+  ProfileBackCard backLastCard;
 
   AnimationController _controller;
 
@@ -48,6 +53,11 @@ class _CardsSectionState extends State<CardsSection>
           cardNum: cardsCounter,
           cardLabel: "PooPoo",
           photoURL: "res/portrait.jpeg"));
+      backCards.add(ProfileBackCard(
+          cardNum: backCardsCounter,
+          cardLabel: "PeePee",
+          photoURL: "res/portrait.jpeg"));
+      backCardsCounter++;
     }
 
     frontCardAlign = cardsAlign[2];
@@ -74,9 +84,10 @@ class _CardsSectionState extends State<CardsSection>
     return Expanded(
         child: Stack(
       children: <Widget>[
-        backCard(),
-        middleCard(),
-        frontCard(),
+        FlipCard(front: backCard(), back: backsideBackCard()),
+        FlipCard(front:  middleCard(), back: backsideMiddleCard()),
+        FlipCard(front:  frontCard(), back: backsideFrontCard()),
+
 
         // Prevent swiping if the cards are animating
         _controller.status != AnimationStatus.forward
@@ -132,6 +143,19 @@ class _CardsSectionState extends State<CardsSection>
     );
   }
 
+  Widget backsideBackCard() {
+    return Align(
+      alignment: _controller.status == AnimationStatus.forward
+          ? CardsAnimation.backCardAlignmentAnim(_controller).value
+          : cardsAlign[0],
+      child: SizedBox.fromSize(
+          size: _controller.status == AnimationStatus.forward
+              ? CardsAnimation.backCardSizeAnim(_controller).value
+              : cardsSize[2],
+          child: backCards[2]),
+    );
+  }
+
   Widget middleCard() {
     return Align(
       alignment: _controller.status == AnimationStatus.forward
@@ -142,6 +166,19 @@ class _CardsSectionState extends State<CardsSection>
               ? CardsAnimation.middleCardSizeAnim(_controller).value
               : cardsSize[1],
           child: cards[1]),
+    );
+  }
+
+  Widget backsideMiddleCard() {
+    return Align(
+      alignment: _controller.status == AnimationStatus.forward
+          ? CardsAnimation.middleCardAlignmentAnim(_controller).value
+          : cardsAlign[1],
+      child: SizedBox.fromSize(
+          size: _controller.status == AnimationStatus.forward
+              ? CardsAnimation.middleCardSizeAnim(_controller).value
+              : cardsSize[1],
+          child: backCards[1]),
     );
   }
 
@@ -158,6 +195,19 @@ class _CardsSectionState extends State<CardsSection>
         ));
   }
 
+  Widget backsideFrontCard() {
+    return Align(
+        alignment: _controller.status == AnimationStatus.forward
+            ? CardsAnimation.frontCardDisappearAlignmentAnim(
+            _controller, frontCardAlign, this)
+            .value
+            : frontCardAlign,
+        child: Transform.rotate(
+          angle: (pi / 180.0) * frontCardRot,
+          child: SizedBox.fromSize(size: cardsSize[0], child: backCards[0]),
+        ));
+  }
+
   void changeCardsOrder() {
     setState(() {
       // Swap cards (back card becomes the middle card; middle card becomes the front card, front card becomes a  bottom card)
@@ -167,11 +217,23 @@ class _CardsSectionState extends State<CardsSection>
       cards[1] = cards[2];
       cards[2] = lastCard;
 
+      backLastCard = backCards[0];
+      backCards[0] = backCards[1];
+      backCards[1] = backCards[2];
+      backCards[2] = backLastCard;
+
       cards[2] = ProfileCard(
           cardNum: cardsCounter,
           cardLabel: "Poopypoo",
           photoURL: "res/portrait.jpeg");
       cardsCounter++;
+
+      backCards[2] = ProfileBackCard(
+          cardNum: backCardsCounter,
+          cardLabel: "Peepypee",
+          photoURL: "res/portrait.jpeg");
+      cardsCounter++;
+      backCardsCounter++;
 
       frontCardAlign = defaultFrontCardAlign;
       frontCardRot = 0.0;
