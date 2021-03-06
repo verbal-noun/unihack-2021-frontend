@@ -14,13 +14,15 @@ List<Alignment> cardsAlign = [
 List<Size> cardsSize = [];
 
 class CardsSection extends StatefulWidget {
-  CardsSection(BuildContext context) {
+  String location;
+  CardsSection(BuildContext context, String loc) {
     cardsSize.add(Size(MediaQuery.of(context).size.width * 0.9,
         MediaQuery.of(context).size.height * 0.6));
     cardsSize.add(Size(MediaQuery.of(context).size.width * 0.85,
         MediaQuery.of(context).size.height * 0.55));
     cardsSize.add(Size(MediaQuery.of(context).size.width * 0.8,
         MediaQuery.of(context).size.height * 0.5));
+    location = loc;
   }
 
   @override
@@ -86,9 +88,8 @@ class _CardsSectionState extends State<CardsSection>
         child: Stack(
       children: <Widget>[
         FlipCard(front: backCard(), back: backsideBackCard()),
-        FlipCard(front:  middleCard(), back: backsideMiddleCard()),
-        FlipCard(front:  frontCard(), back: backsideFrontCard()),
-
+        FlipCard(front: middleCard(), back: backsideMiddleCard()),
+        FlipCard(front: frontCard(), back: backsideFrontCard()),
 
         // Prevent swiping if the cards are animating
         _controller.status != AnimationStatus.forward
@@ -200,8 +201,8 @@ class _CardsSectionState extends State<CardsSection>
     return Align(
         alignment: _controller.status == AnimationStatus.forward
             ? CardsAnimation.frontCardDisappearAlignmentAnim(
-            _controller, frontCardAlign, this)
-            .value
+                    _controller, frontCardAlign, this)
+                .value
             : frontCardAlign,
         child: Transform.rotate(
           angle: (pi / 180.0) * frontCardRot,
