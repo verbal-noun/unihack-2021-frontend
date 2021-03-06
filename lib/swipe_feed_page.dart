@@ -50,14 +50,6 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
             location = "${snapshot.data.longitude},${snapshot.data.latitude}";
           }
           return Scaffold(
-            appBar: AppBar(
-              elevation: 0.0,
-              centerTitle: true,
-              backgroundColor: Colors.white,
-              leading: IconButton(
-                  onPressed: () {},
-                  icon: Icon(Icons.settings, color: Colors.grey)),
-            ),
             backgroundColor: Colors.white,
             body: Container(
               child: _getPage(currentPage),

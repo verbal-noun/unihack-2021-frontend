@@ -26,13 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d869332-63f1-403f-86fc-f64482ce6695" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/backside_profile_card_alignment.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/cards_section_alignment.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/cards_section_alignment.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/swipe_feed_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/swipe_feed_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +78,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -93,49 +91,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="571" y="265" key="FileChooserDialogImpl/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1614998307431" />
-    <state width="1398" height="113" key="GridCell.Tab.0.bottom" timestamp="1615018179038">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="1522" height="252" key="GridCell.Tab.0.bottom" timestamp="1615038501551">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="167" key="GridCell.Tab.0.bottom/0.25.1440.804@0.25.1440.804" timestamp="1615014263110" />
     <state width="1398" height="113" key="GridCell.Tab.0.bottom/0.25.1440.805@0.25.1440.805" timestamp="1615018179038" />
-    <state width="1522" height="252" key="GridCell.Tab.0.bottom/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state width="1398" height="113" key="GridCell.Tab.0.center" timestamp="1615018179037">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="1522" height="252" key="GridCell.Tab.0.bottom/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615038501551" />
+    <state width="1522" height="252" key="GridCell.Tab.0.center" timestamp="1615038501551">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="167" key="GridCell.Tab.0.center/0.25.1440.804@0.25.1440.804" timestamp="1615014263108" />
     <state width="1398" height="113" key="GridCell.Tab.0.center/0.25.1440.805@0.25.1440.805" timestamp="1615018179037" />
-    <state width="1522" height="252" key="GridCell.Tab.0.center/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state width="1398" height="113" key="GridCell.Tab.0.left" timestamp="1615018179036">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="1522" height="252" key="GridCell.Tab.0.center/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615038501551" />
+    <state width="1522" height="252" key="GridCell.Tab.0.left" timestamp="1615038501551">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="167" key="GridCell.Tab.0.left/0.25.1440.804@0.25.1440.804" timestamp="1615014263101" />
     <state width="1398" height="113" key="GridCell.Tab.0.left/0.25.1440.805@0.25.1440.805" timestamp="1615018179036" />
-    <state width="1522" height="252" key="GridCell.Tab.0.left/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state width="1398" height="113" key="GridCell.Tab.0.right" timestamp="1615018179038">
-      <screen x="0" y="25" width="1440" height="805" />
+    <state width="1522" height="252" key="GridCell.Tab.0.left/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615038501551" />
+    <state width="1522" height="252" key="GridCell.Tab.0.right" timestamp="1615038501551">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1398" height="167" key="GridCell.Tab.0.right/0.25.1440.804@0.25.1440.804" timestamp="1615014263109" />
     <state width="1398" height="113" key="GridCell.Tab.0.right/0.25.1440.805@0.25.1440.805" timestamp="1615018179038" />
-    <state width="1522" height="252" key="GridCell.Tab.0.right/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615008294093" />
-    <state x="0" y="28" width="1440" height="804" key="SettingsEditor" timestamp="1615014046987">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1522" height="252" key="GridCell.Tab.0.right/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615038501551" />
+    <state x="292" y="152" width="1440" height="804" key="SettingsEditor" timestamp="1615034822628">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="0" y="28" width="1440" height="804" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1615014046987" />
-    <state x="292" y="152" key="SettingsEditor/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1614996182071" />
+    <state x="292" y="152" key="SettingsEditor/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615034822628" />
     <state x="462" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1614995965939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="462" y="334" key="com.intellij.ide.util.TipDialog/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1614995965939" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/profile_card_expand.dart</url>
-          <line>67</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="454" y="224" width="672" height="678" key="search.everywhere.popup" timestamp="1615038454848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="454" y="224" width="672" height="678" key="search.everywhere.popup/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1615038454848" />
   </component>
 </project>

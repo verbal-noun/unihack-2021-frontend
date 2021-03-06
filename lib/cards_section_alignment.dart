@@ -7,9 +7,9 @@ import 'dart:math';
 
 List<Alignment> cardsAlign = [
   // (W , H)
-  Alignment(0.0, 0.2), // Bottom
-  Alignment(0.0, -0.3), // Middle
-  Alignment(0.0, -1.0) // Top
+  Alignment(0.0, 0.4), // Bottom
+  Alignment(0.0, 0.2), // Middle
+  Alignment(0.0, -0.2) // Top
 ];
 List<Size> cardsSize = [];
 
@@ -41,7 +41,8 @@ class _CardsSectionState extends State<CardsSection>
 
   AnimationController _controller;
 
-  final Alignment defaultFrontCardAlign = Alignment(0.0, -1.0);
+  // Determine where the new card will pop up
+  final Alignment defaultFrontCardAlign = Alignment(0.0, -0.2);
   Alignment frontCardAlign;
   double frontCardRot = 0.0;
 
@@ -234,7 +235,6 @@ class _CardsSectionState extends State<CardsSection>
           cardNum: backCardsCounter,
           cardLabel: "Peepypee",
           photoURL: "res/portrait.jpeg");
-      cardsCounter++;
       backCardsCounter++;
 
       frontCardAlign = defaultFrontCardAlign;
