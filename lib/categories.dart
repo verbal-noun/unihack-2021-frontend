@@ -35,12 +35,16 @@ class CategoriesPage extends StatelessWidget {
     var color = 0xff453658;
     return Scaffold(
         backgroundColor: new Color.fromRGBO(35, 74, 109, 1),
-        appBar: AppBar(title: Text("Categories page"),),
+        appBar: AppBar(
+          title: Text("Categories page"),
+          backgroundColor: new Color.fromRGBO(23, 61, 86, 1),
+        ),
+
         body: Column(
             children: [Flexible(
               child: GridView.count(
                   childAspectRatio: 1.0,
-                  padding: EdgeInsets.only(left: 16, right: 16),
+                  padding: EdgeInsets.only(top: 16.0, left: 16, right: 16),
                   crossAxisCount: 2,
                   crossAxisSpacing: 18,
                   mainAxisSpacing: 18,
