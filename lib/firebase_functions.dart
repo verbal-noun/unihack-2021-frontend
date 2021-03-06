@@ -9,7 +9,7 @@ class Backend {
       "location": "${location[0]},${location[1]}",
       "categories": categories
     }));
-    print(result.toString());
+    print(result.data);
     return [];
   }
 

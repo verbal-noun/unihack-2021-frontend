@@ -19,6 +19,8 @@ class MyApp extends StatelessWidget {
           if (snapshot.hasError) return Container();
           if (snapshot.connectionState == ConnectionState.done) {
             // Test
+            Backend.fetchNearby([-37.80203864952784, 144.9590979411664],
+                ['restaurant', 'university']);
             return MaterialApp(
                 title: 'Activity Decider',
                 theme: ThemeData(primarySwatch: Colors.blue),
