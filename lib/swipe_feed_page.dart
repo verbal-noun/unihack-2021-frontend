@@ -55,6 +55,7 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
               child: _getPage(currentPage),
             ),
             bottomNavigationBar: FancyBottomNavigation(
+
               tabs: [
                 TabData(
                     iconData: Icons.home,

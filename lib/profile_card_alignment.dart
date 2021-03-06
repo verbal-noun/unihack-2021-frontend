@@ -19,7 +19,7 @@ class _ProfileCardState extends State<ProfileCard> {
           SizedBox.expand(
             child: Material(
               borderRadius: BorderRadius.circular(12.0),
-              child: Image.asset(widget.photoURL, fit: BoxFit.cover),
+              child: Image.asset(widget.photoURL, fit: BoxFit.cover)
             ),
           ),
           SizedBox.expand(
