@@ -2,7 +2,7 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 class Backend {
-  static Future<dynamic> fetchNearby(List location, List categories) async {
+  static Future<List> fetchNearby(List location, List categories) async {
     var url = Uri.https(
         'us-central1-unihack-team-v.cloudfunctions.net', '/api/nearby');
     var response = await http.post(url,
