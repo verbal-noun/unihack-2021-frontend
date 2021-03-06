@@ -1,13 +1,13 @@
 #!/bin/sh
 # This is a generated file; do not edit or check into version control.
-export "FLUTTER_ROOT=/home/sirbob/snap/flutter/common/flutter"
-export "FLUTTER_APPLICATION_PATH=/mnt/BA9292B39292739B/MyPrograms/Competitions/Unihack/unihack-2021-frontend"
-export "FLUTTER_TARGET=lib/main.dart"
+export "FLUTTER_ROOT=/Users/thebannaohi/Tool/flutter"
+export "FLUTTER_APPLICATION_PATH=/Users/thebannaohi/unihack/unihack-2021-frontend"
+export "FLUTTER_TARGET=/Users/thebannaohi/unihack/unihack-2021-frontend/lib/main.dart"
 export "FLUTTER_BUILD_DIR=build"
 export "SYMROOT=${SOURCE_ROOT}/../build/ios"
 export "FLUTTER_BUILD_NAME=1.0.0"
 export "FLUTTER_BUILD_NUMBER=1"
 export "DART_OBFUSCATION=false"
-export "TRACK_WIDGET_CREATION=false"
+export "TRACK_WIDGET_CREATION=true"
 export "TREE_SHAKE_ICONS=false"
-export "PACKAGE_CONFIG=.packages"
+export "PACKAGE_CONFIG=/Users/thebannaohi/unihack/unihack-2021-frontend/.dart_tool/package_config.json"
