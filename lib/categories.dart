@@ -11,7 +11,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Categories page"),),
+      appBar: AppBar(title: Text("Categories page"),
+        back
+      ),
       body: Center(child: Text("Browse activities by categories"),),
     );
   }
