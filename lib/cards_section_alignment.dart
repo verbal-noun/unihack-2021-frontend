@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tinder_cards/profile_card_expand.dart';
 import 'profile_card_alignment.dart';
 import 'dart:math';
 
@@ -7,27 +8,30 @@ List<Alignment> cardsAlign = [
   Alignment(0.0, 0.8),
   Alignment(0.0, 0.0)
 ];
-List<Size> cardsSize = List(3);
+List<Size> cardsSize = [];
 
-class CardsSectionAlignment extends StatefulWidget {
-  CardsSectionAlignment(BuildContext context) {
-    cardsSize[0] = Size(MediaQuery.of(context).size.width * 0.9,
-        MediaQuery.of(context).size.height * 0.6);
-    cardsSize[1] = Size(MediaQuery.of(context).size.width * 0.85,
-        MediaQuery.of(context).size.height * 0.55);
-    cardsSize[2] = Size(MediaQuery.of(context).size.width * 0.8,
-        MediaQuery.of(context).size.height * 0.5);
+class CardsSection extends StatefulWidget {
+  CardsSection(BuildContext context) {
+    cardsSize.add(Size(MediaQuery.of(context).size.width * 0.9,
+        MediaQuery.of(context).size.height * 0.6));
+    cardsSize.add(Size(MediaQuery.of(context).size.width * 0.85,
+        MediaQuery.of(context).size.height * 0.55));
+    cardsSize.add(Size(MediaQuery.of(context).size.width * 0.8,
+        MediaQuery.of(context).size.height * 0.5));
   }
 
   @override
   _CardsSectionState createState() => _CardsSectionState();
 }
 
-class _CardsSectionState extends State<CardsSectionAlignment>
+class _CardsSectionState extends State<CardsSection>
     with SingleTickerProviderStateMixin {
   int cardsCounter = 0;
+  int dir = 0;
 
-  List<ProfileCardAlignment> cards = List();
+  List<ProfileCard> cards = [];
+  ProfileCard lastCard;
+
   AnimationController _controller;
 
   final Alignment defaultFrontCardAlign = Alignment(0.0, 0.0);
@@ -38,9 +42,12 @@ class _CardsSectionState extends State<CardsSectionAlignment>
   void initState() {
     super.initState();
 
-    // Init cards
+    // Read cards from backend
     for (cardsCounter = 0; cardsCounter < 3; cardsCounter++) {
-      cards.add(ProfileCardAlignment(cardsCounter));
+      cards.add(ProfileCard(
+          cardNum: cardsCounter,
+          cardLabel: "PooPoo",
+          photoURL: "res/portrait.jpeg"));
     }
 
     frontCardAlign = cardsAlign[2];
@@ -50,7 +57,15 @@ class _CardsSectionState extends State<CardsSectionAlignment>
         AnimationController(duration: Duration(milliseconds: 700), vsync: this);
     _controller.addListener(() => setState(() {}));
     _controller.addStatusListener((AnimationStatus status) {
-      if (status == AnimationStatus.completed) changeCardsOrder();
+      if (status == AnimationStatus.completed) {
+        changeCardsOrder();
+        if (dir == 1) {
+          print("Found a match! ${lastCard.cardNum}");
+          Navigator.of(context).push(new PageRouteBuilder(
+            pageBuilder: (_, __, ___) => new DetailPage(),
+          ));
+        }
+      }
     });
   }
 
@@ -134,7 +149,7 @@ class _CardsSectionState extends State<CardsSectionAlignment>
     return Align(
         alignment: _controller.status == AnimationStatus.forward
             ? CardsAnimation.frontCardDisappearAlignmentAnim(
-                    _controller, frontCardAlign)
+                    _controller, frontCardAlign, this)
                 .value
             : frontCardAlign,
         child: Transform.rotate(
@@ -146,12 +161,16 @@ class _CardsSectionState extends State<CardsSectionAlignment>
   void changeCardsOrder() {
     setState(() {
       // Swap cards (back card becomes the middle card; middle card becomes the front card, front card becomes a  bottom card)
-      var temp = cards[0];
+
+      lastCard = cards[0];
       cards[0] = cards[1];
       cards[1] = cards[2];
-      cards[2] = temp;
+      cards[2] = lastCard;
 
-      cards[2] = ProfileCardAlignment(cardsCounter);
+      cards[2] = ProfileCard(
+          cardNum: cardsCounter,
+          cardLabel: "Poopypoo",
+          photoURL: "res/portrait.jpeg");
       cardsCounter++;
 
       frontCardAlign = defaultFrontCardAlign;
@@ -194,13 +213,14 @@ class CardsAnimation {
   }
 
   static Animation<Alignment> frontCardDisappearAlignmentAnim(
-      AnimationController parent, Alignment beginAlign) {
+      AnimationController parent,
+      Alignment beginAlign,
+      _CardsSectionState state) {
+    // Has swiped to the left or right?
+    state.dir = beginAlign.x > 0 ? 1 : -1;
     return AlignmentTween(
             begin: beginAlign,
-            end: Alignment(
-                beginAlign.x > 0 ? beginAlign.x + 30.0 : beginAlign.x - 30.0,
-                0.0) // Has swiped to the left or right?
-            )
+            end: Alignment(beginAlign.x + (state.dir * 30.0), 0.0))
         .animate(CurvedAnimation(
             parent: parent, curve: Interval(0.0, 0.5, curve: Curves.easeIn)));
   }

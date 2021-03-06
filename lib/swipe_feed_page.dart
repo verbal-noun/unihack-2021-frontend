@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'cards_section_alignment.dart';
-import 'cards_section_draggable.dart';
 
 class SwipeFeedPage extends StatefulWidget {
   @override
@@ -19,11 +18,6 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
         backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {}, icon: Icon(Icons.settings, color: Colors.grey)),
-        title: Switch(
-          onChanged: (bool value) => setState(() => showAlignmentCards = value),
-          value: showAlignmentCards,
-          activeColor: Colors.red,
-        ),
         actions: <Widget>[
           IconButton(
               onPressed: () {},
@@ -32,12 +26,7 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
       ),
       backgroundColor: Colors.white,
       body: Column(
-        children: <Widget>[
-          showAlignmentCards
-              ? CardsSectionAlignment(context)
-              : CardsSectionDraggable(),
-          buttonsRow()
-        ],
+        children: <Widget>[CardsSection(context), buttonsRow()],
       ),
     );
   }
