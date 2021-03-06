@@ -34,7 +34,6 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
             TabData(
                 iconData: Icons.search,
                 title: "Search",
-                onclick: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=> CategoriesPage()))
             ),
           ],
           initialSelection: 0,

@@ -40,7 +40,7 @@ class _CardsSectionState extends State<CardsSection>
 
   AnimationController _controller;
 
-  // Determine where the new card will pop up 
+  // Determine where the new card will pop up
   final Alignment defaultFrontCardAlign = Alignment(0.0, -0.2);
   Alignment frontCardAlign;
   double frontCardRot = 0.0;
@@ -234,7 +234,6 @@ class _CardsSectionState extends State<CardsSection>
           cardNum: backCardsCounter,
           cardLabel: "Peepypee",
           photoURL: "res/portrait.jpeg");
-      cardsCounter++;
       backCardsCounter++;
 
       frontCardAlign = defaultFrontCardAlign;
