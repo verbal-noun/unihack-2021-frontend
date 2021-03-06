@@ -23,11 +23,6 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
         backgroundColor: Colors.white,
         leading: IconButton(
             onPressed: () {}, icon: Icon(Icons.settings, color: Colors.grey)),
-        actions: <Widget>[
-          IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.question_answer, color: Colors.grey)),
-        ],
       ),
       backgroundColor: Colors.white,
       body: Container(

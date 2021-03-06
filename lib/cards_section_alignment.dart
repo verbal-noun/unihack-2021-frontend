@@ -6,9 +6,10 @@ import 'backside_profile_card_alignment.dart';
 import 'dart:math';
 
 List<Alignment> cardsAlign = [
-  Alignment(0.0, 1.0),
-  Alignment(0.0, 0.8),
-  Alignment(0.0, 0.0)
+  // (W , H)
+  Alignment(0.0, 0.2), // Bottom
+  Alignment(0.0, -0.3), // Middle
+  Alignment(0.0, -1.0) // Top
 ];
 List<Size> cardsSize = [];
 
@@ -39,7 +40,7 @@ class _CardsSectionState extends State<CardsSection>
 
   AnimationController _controller;
 
-  final Alignment defaultFrontCardAlign = Alignment(0.0, 0.0);
+  final Alignment defaultFrontCardAlign = Alignment(0.0, -1.0);
   Alignment frontCardAlign;
   double frontCardRot = 0.0;
 
