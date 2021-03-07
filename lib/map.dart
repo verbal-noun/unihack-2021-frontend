@@ -68,11 +68,11 @@ class _MapViewState extends State<MapView> {
               initialCameraPosition: camera,
               onMapCreated: (GoogleMapController controller) {
                 _controller.complete(controller);
-                // controller.animateCamera(CameraUpdate.newLatLngBounds(
-                //     LatLngBounds(
-                //         northeast: _northeastCoordinates,
-                //         southwest: _southwestCoordinates),
-                //     100.0));
+                controller.animateCamera(CameraUpdate.newLatLngBounds(
+                    LatLngBounds(
+                        northeast: _northeastCoordinates,
+                        southwest: _southwestCoordinates),
+                    100.0));
               },
             ),
           ],
