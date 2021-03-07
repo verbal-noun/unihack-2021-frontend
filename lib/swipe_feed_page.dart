@@ -51,6 +51,10 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
           }
           return Scaffold(
             backgroundColor: new Color.fromRGBO(35, 74, 109, 1),
+            appBar: AppBar(
+              title: Image.asset('res/logo-trans.png', height: 80),
+              backgroundColor: new Color.fromRGBO(35, 74, 109, 1),
+            ),
             body: Container(
               child: _getPage(currentPage),
             ),
