@@ -159,7 +159,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
                                         Container(
-                                          child: Text('Location Name',
+                                          child: Text(widget.name,
                                               style: GoogleFonts.openSans(
                                                   textStyle: TextStyle(
                                                       color: Colors.white,

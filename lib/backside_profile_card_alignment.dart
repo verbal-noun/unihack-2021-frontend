@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'map.dart';
 
 class ProfileBackCard extends StatefulWidget {
-  final int cardNum;
   final String cardLabel;
   final String photoURL;
   final String about;
-  final String distance;
+  final double distance;
 
-  ProfileBackCard(
-      {this.cardNum, this.cardLabel, this.photoURL, this.about, this.distance});
+  ProfileBackCard({this.cardLabel, this.photoURL, this.about, this.distance});
 
   @override
   _ProfileBackCardState createState() => _ProfileBackCardState();
@@ -31,7 +29,7 @@ class _ProfileBackCardState extends State<ProfileBackCard> {
             child: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
-                      colors: [Colors.transparent, Colors.black54],
+                      colors: [Colors.black, Colors.black54],
                       begin: Alignment.center,
                       end: Alignment.bottomCenter)),
             ),
@@ -44,7 +42,7 @@ class _ProfileBackCardState extends State<ProfileBackCard> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text('Strike Melbourne Central',
+                    Text(widget.cardLabel,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
@@ -54,7 +52,7 @@ class _ProfileBackCardState extends State<ProfileBackCard> {
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
-                          Text(widget.distance,
+                          Text("${widget.distance} KM",
                               textAlign: TextAlign.end,
                               style: TextStyle(color: Colors.white)),
                           // Column(

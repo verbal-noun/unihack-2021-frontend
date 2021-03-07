@@ -95,8 +95,7 @@ class _CardsSectionState extends State<CardsSection>
     generateCards();
   }
 
-  Future<bool> generateCards() async {
-    if (ready) return true;
+  Stream generateCards() async* {
     List results = await Backend.fetchNearby(widget.location, [
       "amusement_park",
       "aquarium",
@@ -128,25 +127,27 @@ class _CardsSectionState extends State<CardsSection>
         res["geometry"]["location"]["lat"],
         res["geometry"]["location"]["lng"]
       ];
+      double distance = calculateDistance(
+          target[0], target[1], widget.location[0], widget.location[1]);
       cards.add(ProfileCard(
           name: res["name"],
-          distance: calculateDistance(
-              target[0], target[1], widget.location[0], widget.location[1]),
+          distance: distance,
           photoURLs: imageURLs,
           target: target));
       backCards.add(ProfileBackCard(
-          cardLabel: res["name"], distance: "5 kms", photoURL: imageURLs[0]));
+          cardLabel: res["name"], distance: distance, photoURL: imageURLs[0]));
+      if (backCards.length > 5) {
+        yield true;
+      }
     }
-    ready = true;
-    return true;
   }
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: generateCards(),
+    return StreamBuilder(
+        stream: generateCards(),
         builder: (context, snapshot) {
-          if (!snapshot.hasData) {
+          if (!snapshot.hasData || !snapshot.data) {
             return Text("Loading");
           }
           return Expanded(
