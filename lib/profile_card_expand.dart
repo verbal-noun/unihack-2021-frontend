@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
+import 'package:tinder_cards/categories.dart';
 
 class DetailPage extends StatefulWidget {
   @override
@@ -55,24 +57,18 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
+    GlobalKey bottomNavigationKey = GlobalKey();
+    int currentPage = 0;
     timeDilation = 0.7;
     //print("detail");
-    return new Theme(
+    return Scaffold(
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+            child: new Theme(
       data: new ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.yellow,
-        /////Carousel Below
-        // SizedBox(
-        //     height: 150.0,
-        //     width: 300.0,
-        //     child: Carousel(
-        //       images: [
-        //         NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-        //         NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
-        //         ExactAssetImage("assets/images/LaunchImage.jpg")
-        //       ],
-        //     )
-        // ),
+        primaryColor: new Color.fromRGBO(35, 74, 109, 1),
         platform: Theme.of(context).platform,
       ),
       child: new Container(
@@ -87,7 +83,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
               width: width.value,
               height: heigth.value,
               decoration: new BoxDecoration(
-                color: Colors.lightBlueAccent,
+                color: new Color.fromRGBO(35, 74, 109, 1),
                 borderRadius: new BorderRadius.circular(10.0),
               ),
               child: new Stack(
@@ -115,7 +111,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                             _appBarBehavior == AppBarBehavior.snapping,
                         snap: _appBarBehavior == AppBarBehavior.snapping,
                         flexibleSpace: new FlexibleSpaceBar(
-                          title: new Text("Party"),
                           background: new Stack(
                             fit: StackFit.expand,
                             children: <Widget>[
@@ -123,6 +118,19 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                 width: width.value,
                                 height: _appBarHeight,
                               ),
+                              SizedBox(
+                                  height: 150.0,
+                                  width: 300.0,
+                                  child: Carousel(
+                                    images: [
+                                      NetworkImage(
+                                          'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+                                      NetworkImage(
+                                          'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+                                      ExactAssetImage(
+                                          "assets/images/LaunchImage.jpg")
+                                    ],
+                                  )),
                             ],
                           ),
                         ),
@@ -130,7 +138,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       new SliverList(
                         delegate: new SliverChildListDelegate(<Widget>[
                           new Container(
-                            color: Colors.lightBlueAccent,
+                            color: new Color.fromRGBO(35, 74, 109, 1),
                             child: new Padding(
                               padding: const EdgeInsets.all(35.0),
                               child: new Column(
@@ -140,7 +148,8 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                     padding: new EdgeInsets.only(bottom: 20.0),
                                     alignment: Alignment.center,
                                     decoration: new BoxDecoration(
-                                        color: Colors.white,
+                                        color:
+                                            new Color.fromRGBO(35, 74, 109, 1),
                                         border: new Border(
                                             bottom: new BorderSide(
                                                 color: Colors.black12))),
@@ -152,12 +161,16 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                           children: <Widget>[
                                             new Icon(
                                               Icons.access_time,
-                                              color: Colors.blueAccent,
+                                              color: Colors.cyanAccent,
                                             ),
                                             new Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: new Text("Opening hour: 10:00  AM"),
+                                              child: new Text(
+                                                "Opening hour: 10:00  AM",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
                                             )
                                           ],
                                         ),
@@ -165,12 +178,16 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                           children: <Widget>[
                                             new Icon(
                                               Icons.map,
-                                              color: Colors.blueAccent,
+                                              color: Colors.cyanAccent,
                                             ),
                                             new Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: new Text("Distance: 5 KMS"),
+                                              child: new Text(
+                                                "Distance: 5 KMS",
+                                                style: TextStyle(
+                                                    color: Colors.white),
+                                              ),
                                             )
                                           ],
                                         ),
@@ -181,13 +198,14 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                     padding: const EdgeInsets.only(
                                         top: 16.0, bottom: 8.0),
                                     child: new Text(
-                                      "MAP",
+                                      "Directions",
                                       style: new TextStyle(
-                                          fontWeight: FontWeight.bold),
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.white),
                                     ),
                                   ),
                                   Image.asset(
-                                    "/SampleImage1.png",
+                                    "res/SampleImage1.png",
                                     width: 292,
                                   ),
                                   new Container(
@@ -205,49 +223,47 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       width: 600.0,
                       height: 80.0,
                       decoration: new BoxDecoration(
-                        color: Colors.white,
+                        color: new Color.fromRGBO(35, 74, 109, 1),
                       ),
                       alignment: Alignment.center,
                       child: new Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: <Widget>[
-                          new TextButton(
-                              onPressed: () {},
-                              child: new Container(
-                                height: 60.0,
-                                width: 130.0,
-                                alignment: Alignment.center,
-                                decoration: new BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: new BorderRadius.circular(60.0),
-                                ),
-                                child: new Text(
-                                  "DON'T",
-                                  style: new TextStyle(color: Colors.white),
-                                ),
-                              )),
-                          new TextButton(
-                              onPressed: () {},
-                              child: new Container(
-                                height: 60.0,
-                                width: 130.0,
-                                alignment: Alignment.center,
-                                decoration: new BoxDecoration(
-                                  color: Colors.blueAccent,
-                                  borderRadius: new BorderRadius.circular(60.0),
-                                ),
-                                child: new Text(
-                                  "I'M IN",
-                                  style: new TextStyle(color: Colors.white),
-                                ),
-                              ))
-                        ],
+                        children: <Widget>[],
                       ))
                 ],
               ),
             ),
           ),
         ),
+      ),
+    )),
+      bottomNavigationBar: FancyBottomNavigation(
+        barBackgroundColor: new Color.fromRGBO(23, 61, 86, 1),
+        circleColor: new Color.fromRGBO(0, 172, 193, 1),
+        inactiveIconColor: Colors.cyanAccent,
+        textColor: Colors.white,
+        tabs: [
+          TabData(
+              iconData: Icons.home,
+              title: "Home",
+              onclick: () {
+                final FancyBottomNavigationState fstate =
+                    bottomNavigationKey.currentState;
+                fstate.setPage(2);
+              }),
+          TabData(
+              iconData: Icons.search,
+              title: "Search",
+              onclick: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => CategoriesPage()))),
+        ],
+        initialSelection: 0,
+        key: bottomNavigationKey,
+        onTabChangedListener: (position) {
+          setState(() {
+            currentPage = position;
+          });
+        },
       ),
     );
   }
