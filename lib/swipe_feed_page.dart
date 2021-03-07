@@ -50,12 +50,15 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
             location = "${snapshot.data.longitude},${snapshot.data.latitude}";
           }
           return Scaffold(
-            backgroundColor: Colors.white,
+            backgroundColor: new Color.fromRGBO(35, 74, 109, 1),
             body: Container(
               child: _getPage(currentPage),
             ),
             bottomNavigationBar: FancyBottomNavigation(
-
+              barBackgroundColor: new Color.fromRGBO(23, 61, 86, 1),
+              circleColor: new Color.fromRGBO(0, 172, 193, 1),
+              inactiveIconColor: Colors.cyanAccent,
+              textColor: Colors.white,
               tabs: [
                 TabData(
                     iconData: Icons.home,

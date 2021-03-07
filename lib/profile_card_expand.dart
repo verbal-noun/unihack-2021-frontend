@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 class DetailPage extends StatefulWidget {
   @override
@@ -59,7 +60,19 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
     return new Theme(
       data: new ThemeData(
         brightness: Brightness.light,
-        primaryColor: Colors.cyan,
+        primaryColor: Colors.yellow,
+        /////Carousel Below
+        // SizedBox(
+        //     height: 150.0,
+        //     width: 300.0,
+        //     child: Carousel(
+        //       images: [
+        //         NetworkImage('https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+        //         NetworkImage('https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
+        //         ExactAssetImage("assets/images/LaunchImage.jpg")
+        //       ],
+        //     )
+        // ),
         platform: Theme.of(context).platform,
       ),
       child: new Container(
@@ -135,7 +148,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: <Widget>[
-                                        new Row(
+                                        new Column(
                                           children: <Widget>[
                                             new Icon(
                                               Icons.access_time,
@@ -144,11 +157,11 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                             new Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: new Text("10:00  AM"),
+                                              child: new Text("Opening hour: 10:00  AM"),
                                             )
                                           ],
                                         ),
-                                        new Row(
+                                        new Column(
                                           children: <Widget>[
                                             new Icon(
                                               Icons.map,
@@ -157,7 +170,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                             new Padding(
                                               padding:
                                                   const EdgeInsets.all(8.0),
-                                              child: new Text("15 MILES"),
+                                              child: new Text("Distance: 5 KMS"),
                                             )
                                           ],
                                         ),
@@ -168,12 +181,15 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                     padding: const EdgeInsets.only(
                                         top: 16.0, bottom: 8.0),
                                     child: new Text(
-                                      "ABOUT",
+                                      "MAP",
                                       style: new TextStyle(
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
-                                  new Text("Testing!!!"),
+                                  Image.asset(
+                                    "/SampleImage1.png",
+                                    width: 292,
+                                  ),
                                   new Container(
                                     height: 100.0,
                                   )
