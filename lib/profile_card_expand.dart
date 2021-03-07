@@ -4,6 +4,8 @@ import 'package:carousel_pro/carousel_pro.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:tinder_cards/categories.dart';
 import 'package:tinder_cards/map.dart';
+import 'package:tinder_cards/swipe_feed_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatefulWidget {
   final String name;
@@ -28,6 +30,17 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   double _appBarHeight = 256.0;
   AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
   List<dynamic> images = [];
+
+  _getPage(int page) {
+    switch (page) {
+      case 0:
+        return SwipeFeedPage();
+      case 1:
+        return CategoriesPage();
+      default:
+        return SwipeFeedPage();
+    }
+  }
 
   void initState() {
     _containerController = new AnimationController(
@@ -127,10 +140,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                 background: new Stack(
                                   fit: StackFit.expand,
                                   children: <Widget>[
-                                    new Container(
-                                      width: width.value,
-                                      height: _appBarHeight,
-                                    ),
                                     SizedBox(
                                         height: 150.0,
                                         width: 300.0,
@@ -144,11 +153,22 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                 new Container(
                                   color: new Color.fromRGBO(35, 74, 109, 1),
                                   child: new Padding(
-                                    padding: const EdgeInsets.all(35.0),
+                                    padding: const EdgeInsets.all(30.0),
                                     child: new Column(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: <Widget>[
+                                        Container(
+                                          child: Text('Location Name',
+                                              style: GoogleFonts.openSans(
+                                                  textStyle: TextStyle(
+                                                      color: Colors.white,
+                                                      fontWeight:
+                                                          FontWeight.w700,
+                                                      fontSize: 18))),
+                                          padding:
+                                              EdgeInsets.only(bottom: 10.0),
+                                        ),
                                         new Container(
                                           padding:
                                               new EdgeInsets.only(bottom: 20.0),
@@ -256,13 +276,15 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
               onclick: () {
                 final FancyBottomNavigationState fstate =
                     bottomNavigationKey.currentState;
-                fstate.setPage(2);
+                fstate.setPage(0);
               }),
           TabData(
               iconData: Icons.search,
               title: "Search",
-              onclick: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => CategoriesPage()))),
+              onclick: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (_) => CategoriesPage()));
+              }),
         ],
         initialSelection: 0,
         key: bottomNavigationKey,
