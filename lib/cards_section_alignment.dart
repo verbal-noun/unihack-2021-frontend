@@ -82,7 +82,12 @@ class _CardsSectionState extends State<CardsSection>
         }
         if (dir == 1) {
           Navigator.of(context).push(new PageRouteBuilder(
-            pageBuilder: (_, __, ___) => new DetailPage(),
+            pageBuilder: (_, __, ___) => new DetailPage(
+                name: lastCard.name,
+                photoURLs: lastCard.photoURLs,
+                distance: lastCard.distance,
+                location: widget.location,
+                target: lastCard.target),
           ));
         }
       }
@@ -102,19 +107,21 @@ class _CardsSectionState extends State<CardsSection>
           var photo = res["photos"][j];
           imageURLs.add(await Backend.fetchImage(photo["photo_reference"]));
         }
+      } else {
+        imageURLs.add(res["icon"]);
       }
+      List target = [
+        res["geometry"]["location"]["lat"],
+        res["geometry"]["location"]["lng"]
+      ];
       cards.add(ProfileCard(
-          cardLabel: res["name"],
+          name: res["name"],
           distance: calculateDistance(
-              res["geometry"]["location"]["lat"],
-              res["geometry"]["location"]["lng"],
-              widget.location[0],
-              widget.location[1]),
-          photoURL: imageURLs.length > 0 ? imageURLs[0] : res["icon"]));
+              target[0], target[1], widget.location[0], widget.location[1]),
+          photoURLs: imageURLs,
+          target: target));
       backCards.add(ProfileBackCard(
-          cardLabel: res["name"],
-          distance: "5 kms",
-          photoURL: imageURLs.length > 0 ? imageURLs[0] : res["icon"]));
+          cardLabel: res["name"], distance: "5 kms", photoURL: imageURLs[0]));
     }
     ready = true;
   }

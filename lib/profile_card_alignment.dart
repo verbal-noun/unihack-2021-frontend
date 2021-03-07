@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 class ProfileCard extends StatefulWidget {
-  final String cardLabel;
+  final String name;
   final double distance;
-  final String photoURL;
-  ProfileCard({this.cardLabel, this.distance, this.photoURL});
+  final List photoURLs;
+  final List target;
+
+  ProfileCard({this.name, this.distance, this.photoURLs, this.target});
 
   @override
   _ProfileCardState createState() => _ProfileCardState();
@@ -19,7 +21,7 @@ class _ProfileCardState extends State<ProfileCard> {
           SizedBox.expand(
             child: Material(
                 borderRadius: BorderRadius.circular(12.0),
-                child: Image.network(widget.photoURL, fit: BoxFit.cover)),
+                child: Image.network(widget.photoURLs[0], fit: BoxFit.cover)),
           ),
           SizedBox.expand(
             child: Container(
@@ -38,7 +40,7 @@ class _ProfileCardState extends State<ProfileCard> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(widget.cardLabel,
+                    Text(widget.name,
                         style: TextStyle(
                             color: Colors.white,
                             fontSize: 20.0,
