@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'map.dart';
 
 class ProfileBackCard extends StatefulWidget {
   final int cardNum;
@@ -7,7 +8,8 @@ class ProfileBackCard extends StatefulWidget {
   final String about;
   final String distance;
 
-  ProfileBackCard({this.cardNum, this.cardLabel, this.photoURL, this.about, this.distance});
+  ProfileBackCard(
+      {this.cardNum, this.cardLabel, this.photoURL, this.about, this.distance});
 
   @override
   _ProfileBackCardState createState() => _ProfileBackCardState();
@@ -24,7 +26,6 @@ class _ProfileBackCardState extends State<ProfileBackCard> {
               borderRadius: BorderRadius.circular(12.0),
               //child: Image.asset(widget.photoURL, fit: BoxFit.cover),
             ),
-
           ),
           SizedBox.expand(
             child: Container(
@@ -51,7 +52,7 @@ class _ProfileBackCardState extends State<ProfileBackCard> {
                     Padding(padding: EdgeInsets.only(bottom: 8.0)),
                     Column(
                         mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment : CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
                           Text(widget.distance,
                               textAlign: TextAlign.end,
@@ -63,8 +64,7 @@ class _ProfileBackCardState extends State<ProfileBackCard> {
                           //         style: TextStyle(color: Colors.white)),
                           //   ]
                           // )
-                        ]
-                    )
+                        ])
                   ],
                 )),
           )

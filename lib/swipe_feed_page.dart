@@ -14,7 +14,9 @@ class SwipeFeedPage extends StatefulWidget {
 class _SwipeFeedPageState extends State<SwipeFeedPage> {
   bool showAlignmentCards = false;
   int currentPage = 0;
-  String location = "-37.8095071373105,144.9626793693156";
+
+  // Melbourne central default location
+  List location = [-37.8095071373105, 144.9626793693156];
 
   GlobalKey bottomNavigationKey = GlobalKey();
 
@@ -47,7 +49,7 @@ class _SwipeFeedPageState extends State<SwipeFeedPage> {
           // Melbourne Central default
           if (!snapshot.hasData) return Text("Loading...");
           if (snapshot.data != null) {
-            location = "${snapshot.data.longitude},${snapshot.data.latitude}";
+            location = [snapshot.data.latitude, snapshot.data.longitude];
           }
           return Scaffold(
             backgroundColor: new Color.fromRGBO(35, 74, 109, 1),

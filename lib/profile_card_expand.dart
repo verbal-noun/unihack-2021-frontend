@@ -3,10 +3,20 @@ import 'package:flutter/scheduler.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'package:fancy_bottom_navigation/fancy_bottom_navigation.dart';
 import 'package:tinder_cards/categories.dart';
+import 'package:tinder_cards/map.dart';
 import 'package:tinder_cards/swipe_feed_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DetailPage extends StatefulWidget {
+  final String name;
+  final List photoURLs;
+  final double distance;
+  final List location;
+  final List target;
+
+  DetailPage(
+      {this.name, this.photoURLs, this.distance, this.location, this.target});
+
   @override
   _DetailPageState createState() => new _DetailPageState();
 }
@@ -17,9 +27,9 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
   AnimationController _containerController;
   Animation<double> width;
   Animation<double> heigth;
-  List data = [];
   double _appBarHeight = 256.0;
   AppBarBehavior _appBarBehavior = AppBarBehavior.pinned;
+  List<dynamic> images = [];
 
   _getPage(int page) {
     switch (page) {
@@ -59,6 +69,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
         if (heigth.isCompleted) {}
       });
     });
+    widget.photoURLs.forEach((url) => images.add(NetworkImage(url)));
     _containerController.forward();
   }
 
@@ -132,16 +143,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                     SizedBox(
                                         height: 150.0,
                                         width: 300.0,
-                                        child: Carousel(
-                                          images: [
-                                            NetworkImage(
-                                                'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                                            NetworkImage(
-                                                'https://cdn-images-1.medium.com/max/2000/1*wnIEgP1gNMrK5gZU7QS0-A.jpeg'),
-                                            ExactAssetImage(
-                                                "assets/images/LaunchImage.jpg")
-                                          ],
-                                        )),
+                                        child: Carousel(images: images)),
                                   ],
                                 ),
                               ),
@@ -210,7 +212,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                                         const EdgeInsets.all(
                                                             8.0),
                                                     child: new Text(
-                                                      "Distance: 5 KMS",
+                                                      "Distance: ${double.parse((widget.distance).toStringAsFixed(2))} KMS",
                                                       style: TextStyle(
                                                           color: Colors.white),
                                                     ),
@@ -230,10 +232,9 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                                                 color: Colors.white),
                                           ),
                                         ),
-                                        Image.asset(
-                                          "res/SampleImage1.png",
-                                          width: 292,
-                                        ),
+                                        MapView(
+                                            location: widget.location,
+                                            target: widget.target),
                                         new Container(
                                           height: 100.0,
                                         )
