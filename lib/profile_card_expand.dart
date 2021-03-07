@@ -63,6 +63,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
     //print("detail");
     return Scaffold(
         body: Container(
+          color: new Color.fromRGBO(23, 61, 86, 1),
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
             child: new Theme(
