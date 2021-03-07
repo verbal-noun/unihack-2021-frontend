@@ -97,7 +97,20 @@ class _CardsSectionState extends State<CardsSection>
 
   Future<bool> generateCards() async {
     if (ready) return true;
-    List results = await Backend.fetchNearby(widget.location, ["bar"]);
+    List results = await Backend.fetchNearby(widget.location, [
+      "amusement_park",
+      "aquarium",
+      "art_gallery",
+      "bar",
+      "campground",
+      "casino",
+      "night_club",
+      "shopping_mall",
+      "spa",
+      "stadium",
+      "movie_theater",
+      "park"
+    ]);
 
     // Read cards from backend
     for (int i = 0; i < results.length; i++) {
