@@ -13,6 +13,7 @@ class Backend {
           "location": "${location[0]},${location[1]}",
           "categories": categories
         }));
+    print(response.body);
     return convert.jsonDecode(response.body)["results"];
   }
 

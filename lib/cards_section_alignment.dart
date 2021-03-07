@@ -209,8 +209,8 @@ class _CardsSectionState extends State<CardsSection>
     return Align(
         alignment: _controller.status == AnimationStatus.forward
             ? CardsAnimation.frontCardDisappearAlignmentAnim(
-            _controller, frontCardAlign, this)
-            .value
+                    _controller, frontCardAlign, this)
+                .value
             : frontCardAlign,
         child: Transform.rotate(
           angle: (pi / 180.0) * frontCardRot,

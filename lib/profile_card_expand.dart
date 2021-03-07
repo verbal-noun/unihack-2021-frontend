@@ -78,7 +78,6 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
       child: new Container(
         width: width.value,
         height: heigth.value,
-        color: Colors.blue,
         child: new Hero(
           tag: "img",
           child: new Card(
@@ -88,7 +87,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
               width: width.value,
               height: heigth.value,
               decoration: new BoxDecoration(
-                color: Colors.white,
+                color: Colors.lightBlueAccent,
                 borderRadius: new BorderRadius.circular(10.0),
               ),
               child: new Stack(
@@ -131,7 +130,7 @@ class _DetailPageState extends State<DetailPage> with TickerProviderStateMixin {
                       new SliverList(
                         delegate: new SliverChildListDelegate(<Widget>[
                           new Container(
-                            color: Colors.white,
+                            color: Colors.lightBlueAccent,
                             child: new Padding(
                               padding: const EdgeInsets.all(35.0),
                               child: new Column(

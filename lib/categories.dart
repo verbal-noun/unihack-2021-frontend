@@ -86,8 +86,6 @@ class CategoriesPage extends StatelessWidget {
                   }).toList()),
             )])
         );
-
-
   }
 }
 

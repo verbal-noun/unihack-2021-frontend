@@ -142,6 +142,13 @@
             </list>
           </value>
         </entry>
+        <entry key="location">
+          <value>
+            <list>
+              <option value="$USER_HOME$/AppData/Roaming/Pub/Cache/hosted/pub.dartlang.org/location-2.5.4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="matcher">
           <value>
             <list>
