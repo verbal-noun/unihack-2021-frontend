@@ -11,14 +11,14 @@ WHERE WE GOIN' (WWG) comes to the recue!!!
 ### What does WWG look like and offer?
 | Home Page| Search by Category|
 | ---------------------------------------------------------------------- | ------------------------------------------------------------------ |
-| <img src="img/homepage.jpg" alt="WWG" width="250"> | <img src="img/SeachDashboard.jpg" alt="WWG" width="250"> |
+| <img src="img/Homepage.jpg" alt="WWG" width="250"> | <img src="img/Seachdashboard.jpg" alt="WWG" width="250"> |
 
 WWG offers an amazing UI that shows a user all the 'things do to' nearby, that ranges from restaurants to entertainment options. The user also has the option to find the preferred destination from the categories page. To select a activity, the user has to swipe right on that activity. Otherwise, swipe left to remove an activity.
 
 When the user selects a destination, the page will show few but necessary details such as opening time, distance and how to go there.
 | Selected Destination |
 | ----------  |
-| <img src="img/activity.jpg" alt="WWG" width="250"> |
+| <img src="img/Activity.jpg" alt="WWG" width="250"> |
 
 -----
 
