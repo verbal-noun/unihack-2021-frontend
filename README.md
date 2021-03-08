@@ -24,4 +24,4 @@ When the user selects a destination, the page will show few but necessary detail
 
 
 #### Tech Stack
-Flutter, Node.JS, Google Maos API and Firebase. Here's a  [link](https://github.com/xlelx/unihack2021-team-v) where the backend program can be found.
+Flutter, Node.JS, Google Maps API and Firebase. Here's a  [link](https://github.com/xlelx/unihack2021-team-v) where the backend program can be found.
